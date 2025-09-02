@@ -1,0 +1,81 @@
+term xterm-256color
+
+# Font Configuration
+font_family FantasqueSansM Nerd Font Mono
+font_size 11.0
+disable_ligatures never
+
+# Theme
+include themes/nord.conf
+
+# Tab Bar Configuration (Powerline Style)
+tab_bar_edge bottom
+tab_bar_style powerline
+tab_powerline_style angled
+tab_bar_min_tabs 1
+tab_bar_margin_width 0.0
+tab_bar_margin_height 5.0 0.0
+tab_title_template "{index}:{title.split('/')[-1] if '/' in title else title}"
+
+# Nord-compatible tab colors
+active_tab_foreground   #2e3440
+active_tab_background   #88c0d0
+active_tab_font_style   bold
+inactive_tab_foreground #d8dee9
+inactive_tab_background #4c566a
+inactive_tab_font_style normal
+
+
+# Tab separator (for cleaner powerline look)
+tab_separator " "
+
+# Performance Optimizations
+sync_to_monitor yes
+vsync no
+repaint_delay 10
+input_delay 3
+resize_draw_strategy size
+resize_in_steps yes
+
+# GPU Acceleration
+gpu_optimization yes
+
+# Memory and Processing
+scrollback_lines 10000
+wheel_scroll_multiplier 5.0
+touch_scroll_multiplier 1.0
+
+# Disable unnecessary features for speed
+enable_audio_bell no
+visual_bell_duration 0.0
+window_alert_on_bell no
+bell_on_tab no
+
+# Window settings for performance
+remember_window_size yes
+initial_window_width 1024
+initial_window_height 768
+window_padding_width 8
+
+# Tab bar (minimal for performance)
+tab_bar_edge bottom
+tab_bar_style powerline
+tab_powerline_style slanted
+
+# Force horizontal split (splits current window horizontally)
+map ctrl+shift+minus launch --location=hsplit --cwd=current
+
+# Force vertical split (splits current window vertically)  
+map ctrl+shift+semicolon launch --location=vsplit --cwd=current
+
+# Alternative: Use layout switching
+map ctrl+shift+l next_layout
+
+# Default smart split (keeps current behavior)
+map ctrl+shift+enter launch --location=split
+
+# Navigate between splits
+map ctrl+shift+h neighboring_window left
+map ctrl+shift+l neighboring_window right  
+map ctrl+shift+k neighboring_window up
+map ctrl+shift+j neighboring_window down
